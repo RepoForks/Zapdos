@@ -2,6 +2,7 @@ package com.commit451.zapdos;
 
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.drive.Drive;
@@ -102,6 +103,7 @@ class Driver {
     @Nullable
     private DriveFolder getDriveFolder(Uri uri, boolean createIfNotExistent) {
         DriveFolder startFolder;
+        Log.d("remove", "Uri: " + uri.toString());
         if (Request.SCHEME_FILE.equals(uri.getAuthority())) {
             startFolder = Drive.DriveApi.getRootFolder(mGoogleApiClient);
         } else if (Request.SCHEME_APP.equals(uri.getAuthority())) {

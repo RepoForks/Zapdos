@@ -14,6 +14,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.drive.Drive;
+import com.google.android.gms.drive.DriveId;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 mSampleDrive.writeMessage(FILE_NAME, message)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Subscriber<Message>() {
+                        .subscribe(new Subscriber<DriveId>() {
                             @Override
                             public void onCompleted() {
 
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                             }
 
                             @Override
-                            public void onNext(Message message) {
+                            public void onNext(DriveId message) {
                                 Toast.makeText(MainActivity.this, "Message saved", Toast.LENGTH_SHORT).show();
                             }
                         });

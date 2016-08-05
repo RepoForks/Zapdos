@@ -109,9 +109,9 @@ final class RequestBuilder {
     Request build() {
         Uri.Builder uriBuilder = new Uri.Builder();
         if (baseScope == Drive.SCOPE_APPFOLDER) {
-            uriBuilder.scheme(Request.SCHEME_APP);
+            uriBuilder.authority(Request.SCHEME_APP);
         } else if (baseScope == Drive.SCOPE_FILE) {
-            uriBuilder.scheme(Request.SCHEME_FILE);
+            uriBuilder.authority(Request.SCHEME_FILE);
         }
         uriBuilder.appendPath(relativeUrl);
 

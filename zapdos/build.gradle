@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
         minSdkVersion 15
@@ -21,8 +21,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-annotations:24.0.0'
-    compile 'com.google.android.gms:play-services-drive:9.2.0'
+    compile 'com.android.support:support-annotations:24.1.1'
+    compile 'com.google.android.gms:play-services-drive:9.4.0'
     compile 'io.reactivex:rxjava:1.1.7'
     compile 'com.squareup.okio:okio:1.9.0'
 }
